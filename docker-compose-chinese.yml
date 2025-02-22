@@ -34,7 +34,7 @@ services:
       - "10669:80"
     environment:
       #-------------------！！必填！！-------------------
-      - API_BASE_URL=http:/ip123.57.25.88:10670  #此处务必填写Server 的ip地址与端口号 ，见59行
+      - API_BASE_URL=http:/ip:10670  #此处务必填写Server 的ip地址与端口号 ，见59行
     volumes:
       #- ./Web/dist:/usr/share/nginx/html                             #如若需要自行修改前端，请将前端放置在Web/dist目录下，并解开此行注释
       #- ./Web/nginx/default.conf:/etc/nginx/conf.d/default.conf      #如若需要自行修改nginx配置，请将配置文件放置在Web/nginx/default.conf目录下，并解开此行注释
