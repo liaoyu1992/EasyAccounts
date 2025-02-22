@@ -5,7 +5,7 @@ WebHook/webhook-tools.py
 *.jar
 *.xls
 Resource/sql/*
-
+.history
 Database/data/*
 Database/init/*
 Server/auth/*

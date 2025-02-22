@@ -29,12 +29,12 @@ services:
   nginx:
     restart: always
     container_name: easy_accounts_nginx
-    image: registry.cn-beijing.aliyuncs.com/easy_accounts/easyaccounts-nginx:latest   #此处使用阿里云镜像
+    image: crpi-l7ul7539xkx7aqrj.cn-beijing.personal.cr.aliyuncs.com/easy_account/easy_account_nginx:latest   #此处使用阿里云镜像
     ports:
       - "10669:80"
     environment:
       #-------------------！！必填！！-------------------
-      - API_BASE_URL=http://ip:10670  #此处务必填写Server 的ip地址与端口号 ，见59行
+      - API_BASE_URL=http://123.57.25.88:10670  #此处务必填写Server 的ip地址与端口号 ，见59行
     volumes:
       #- ./Web/dist:/usr/share/nginx/html                             #如若需要自行修改前端，请将前端放置在Web/dist目录下，并解开此行注释
       #- ./Web/nginx/default.conf:/etc/nginx/conf.d/default.conf      #如若需要自行修改nginx配置，请将配置文件放置在Web/nginx/default.conf目录下，并解开此行注释
@@ -48,7 +48,7 @@ services:
     restart: always
     container_name: easy_accounts_server
           
-    image: registry.cn-beijing.aliyuncs.com/easy_accounts/easyaccounts-server:latest # 此处使用阿里云镜像
+    image: crpi-l7ul7539xkx7aqrj.cn-beijing.personal.cr.aliyuncs.com/easy_account/easy_account_server:latest # 此处使用阿里云镜像
     environment:
       #-------------------以下为服务端数据库环境变量，如果不需要外部部署数据库，请勿修改-------------------
       # - MYSQL_HOST=                # 解开注释则需要填写数据库地址，否则默认为db
@@ -78,7 +78,7 @@ services:
       - easy_accounts_net
   
   webhook:
-    image: registry.cn-beijing.aliyuncs.com/easy_accounts/easyaccounts-webhook:latest   # 此处使用阿里云镜像
+    image: crpi-l7ul7539xkx7aqrj.cn-beijing.personal.cr.aliyuncs.com/easy_account/easy_account_webhook:latest   # 此处使用阿里云镜像
     container_name: easy_accounts_webhook
     restart: always
     ports:
@@ -94,11 +94,11 @@ services:
       - SEND_EXCEL=True                       # 是否发送Excel文件，默认True
 
       # -------------------以下为发送邮件服务的环境变量-------------------
-      - SMTP_SERVER=                          # SMTP服务器地址
-      - SMTP_PORT=                            # SMTP端口
-      - SMTP_MAIL=                            # 发件人邮箱，一般来说是SMTP账号，例如自己的QQ邮箱
-      - SMTP_PASSWORD=                        # SMTP密码,一般来说是SMTP账号的授权码,需要自己去自己的邮箱中找到设置
-      - SMTP_TO_LIST=                         # 收件人邮箱列表，用逗号分隔
+      - SMTP_SERVER=smtp.qq.com                          # SMTP服务器地址
+      - SMTP_PORT=587                            # SMTP端口
+      - SMTP_MAIL=1519778181@qq.com                            # 发件人邮箱，一般来说是SMTP账号，例如自己的QQ邮箱
+      - SMTP_PASSWORD=tngiwwxxfhhghfda                        # SMTP密码,一般来说是SMTP账号的授权码,需要自己去自己的邮箱中找到设置
+      - SMTP_TO_LIST=443074582@qq.com,liaoyu@xyit.com.cn                         # 收件人邮箱列表，用逗号分隔
 
     networks:
       - easy_accounts_net
