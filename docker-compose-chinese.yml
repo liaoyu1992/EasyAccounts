@@ -29,7 +29,7 @@ services:
   nginx:
     restart: always
     container_name: easy_accounts_nginx
-    image: crpi-l7ul7539xkx7aqrj.cn-beijing.personal.cr.aliyuncs.com/easy_account/easy_account_nginx:1.0.0   #此处使用阿里云镜像
+    image: crpi-l7ul7539xkx7aqrj.cn-beijing.personal.cr.aliyuncs.com/easy_account/easy_account_nginx:1.0.2   #此处使用阿里云镜像
     ports:
       - "10669:80"
     environment:
