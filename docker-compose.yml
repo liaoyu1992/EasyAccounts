@@ -7,7 +7,7 @@ services:
   db:   
     restart: always
     container_name: easy_accounts_db
-    image: mysql:8.0.31
+    image: registry.cn-beijing.aliyuncs.com/easy_accounts/mysql:8.0.31
     ports:
       - "10668:3306"
     environment:
