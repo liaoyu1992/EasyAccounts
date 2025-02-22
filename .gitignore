@@ -9,7 +9,7 @@ Resource/sql/*
 Database/data/*
 Database/init/*
 Server/auth/*
-
+Database
 release_start.sh
 develop_start.sh
 docker-compose-release.yml
