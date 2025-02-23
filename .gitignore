@@ -13,5 +13,4 @@ Database
 release_start.sh
 develop_start.sh
 docker-compose-release.yml
-docker-compose-chinese.yml
-docker-compose.yml
+docker-compose-chinese-cus.yml
